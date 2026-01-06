@@ -19,8 +19,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 2rem;
-  background: var(--black);
-  color: var(--white);
+  background: var(--white);
+  color: var(--black);
 }
 
 .navbar .logo {
