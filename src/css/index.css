@@ -162,6 +162,12 @@
   text-align: center;
 }
 
+/* Add gap below hero sections to separate from following content */
+.hero,
+.page-hero {
+  margin-bottom: 2.5rem;
+}
+
 .page-hero h1 {
   font-size: 2.4rem;
   margin-bottom: 0.6rem;
@@ -241,6 +247,163 @@
 .content-box.dark {
   background: var(--deep-blue);
   color: var(--white);
+}
+
+/* CONTACT STYLES */
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 1.75rem;
+  padding: 4rem 0 3rem; /* increased top padding to add breathing room */
+  margin: 1rem auto 3rem; /* small top margin as extra spacing */
+  align-items: start;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.contact-card {
+  background: var(--white);
+  padding: 0.9rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(10,26,58,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 88px;
+}
+
+.contact-card h3 {
+  margin-bottom: 0.4rem;
+  color: var(--deep-blue);
+  font-size: 1rem;
+}
+
+/* Social link styling inside contact cards */
+.contact-card p {
+  margin: 0.35rem 0;
+  font-size: 0.95rem;
+  color: #1b2a44;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--deep-blue);
+  background: linear-gradient(180deg, rgba(10,26,58,0.02), rgba(10,26,58,0.01));
+  border: 1px solid rgba(10,26,58,0.06);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+  font-size: 0.95rem;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(10,26,58,0.06);
+  background: linear-gradient(180deg, rgba(10,26,58,0.04), rgba(10,26,58,0.02));
+}
+
+.social-link::before {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(10,26,58,0.06);
+  text-align: center;
+  line-height: 26px;
+  font-size: 13px;
+}
+
+.social-phone::before { content: "📞"; }
+.social-email::before { content: "✉️"; }
+.social-x::before { content: "✖️"; }
+.social-ig::before { content: "📸"; }
+.social-tt::before { content: "🎵"; }
+.social-fb::before { content: "📘"; }
+
+/* Slightly larger grid on wide screens */
+@media (min-width: 1200px) {
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* form adjustments */
+.contact-form label {
+  font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 0.95rem;
+}
+
+.contact-form .primary-btn {
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+}
+
+.contact-form-wrap {
+  background: var(--white);
+  padding: 1.6rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(10,26,58,0.06);
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 0.75rem;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.contact-form .primary-btn {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+    padding: 3rem 1rem; /* slightly larger top padding on mobile/tablet */
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-wrap {
+    order: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 0.75rem;
+    min-height: 72px;
+  }
+
+  .social-link {
+    gap: 0.45rem;
+    padding: 0.3rem 0.45rem;
+    font-size: 0.92rem;
+  }
 }
 
 /* FOOTER */

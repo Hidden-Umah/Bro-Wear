@@ -38,4 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeNav();
     });
+  
+    // Contact form demo submit
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (ev) => {
+            ev.preventDefault();
+            const success = document.querySelector('.contact-success');
+            if (success) {
+                success.style.display = 'block';
+                contactForm.reset();
+                setTimeout(() => success.style.display = 'none', 4000);
+            }
+        });
+    }
 });
