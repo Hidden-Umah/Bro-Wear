@@ -18,6 +18,14 @@
       <a href="src/html/learnMore.html">About</a>
       <a href="#">Contact</a>
     </nav>
+
+    <button class="hamburger" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+
   </header>
 
   <!-- HERO SECTION -->
@@ -26,7 +34,7 @@
       <h1>Wear Confidence.<br>Wear Bro.</h1>
       <p>Premium streetwear built for comfort, style, and confidence.</p>
       <div class="hero-buttons">
-        <button class="primary-btn">Shop Now</button>
+        <button class="primary-btn" onclick="navigateToShop()">Shop Now</button>
         <button class="secondary-btn" onclick="navigateToLearnMore()">Learn More</button>
       </div>
     </div>
@@ -54,6 +62,16 @@
   </footer>
 
 
+  <div class="side-overlay"></div>
+  <aside class="side-nav" aria-hidden="true">
+    <button class="close-btn" aria-label="Close menu">&times;</button>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="src/html/shop.html">Shop</a>
+      <a href="src/html/learnMore.html">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </aside>
 
     <script src="src/js/index.js"></script>
 </body>

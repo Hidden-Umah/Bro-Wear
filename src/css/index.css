@@ -23,6 +23,85 @@
   color: var(--black);
 }
 
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 36px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: var(--black);
+}
+
+/* Side navigation (hidden by default) */
+.side-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 40;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.side-overlay.open {
+  display: block;
+  opacity: 1;
+}
+
+.side-nav {
+  position: fixed;
+  right: -320px;
+  top: 0;
+  height: 100%;
+  width: 300px;
+  background: var(--white);
+  color: var(--black);
+  box-shadow: -6px 0 24px rgba(10,26,58,0.08);
+  padding: 2rem 1.25rem;
+  z-index: 50;
+  transition: right 0.28s ease;
+}
+
+.side-nav.open {
+  right: 0;
+}
+
+.side-nav .close-btn {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+}
+
+.side-nav nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.side-nav nav a {
+  color: var(--deep-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
 .navbar .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -66,6 +145,32 @@
 .hero p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* PAGE HERO (for shop, learn, etc.) */
+.page-hero {
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    rgba(10, 26, 58, 0.85),
+    rgba(10, 26, 58, 0.85)
+  );
+  color: var(--white);
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.page-hero p {
+  font-size: 1.05rem;
+  max-width: 800px;
+  margin: 0 auto;
   line-height: 1.6;
 }
 
@@ -148,6 +253,15 @@
 }
 
 /* RESPONSIVE */
+@media (max-width: 1024px) {
+  .navbar nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.2rem;
@@ -195,6 +309,87 @@
   gap: 2rem;
   padding: 2rem;
   background: var(--white);
+}
+
+/* Layout container helper for consistent gutters */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Responsiveness: adjust grids and spacing */
+@media (max-width: 1100px) {
+  .learn-content {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem 1.25rem;
+  }
+
+  .products {
+    padding: 2rem 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .learn-content {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+
+  .page-hero {
+    padding: 4rem 1rem;
+  }
+
+  .page-hero h1,
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .page-hero p,
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .features {
+    padding: 2.5rem 1rem;
+  }
+
+  .products {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .product-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+
+  .navbar .logo {
+    font-size: 1.25rem;
+  }
+
+  .page-hero {
+    padding: 3rem 0.75rem;
+  }
+
+  .hero h1,
+  .page-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p,
+  .page-hero p {
+    font-size: 0.95rem;
+  }
+
+  .product-image {
+    height: 150px;
+  }
 }
 
 .product-card {
